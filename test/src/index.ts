@@ -20,6 +20,11 @@ import expect = require('expect.js');
 
 
 describe('phosphide', () => {
+
+  it('should pass', () => {
+
+  });
+
   // let reg: CommandRegistry = null;
   // let cmd: (args: any) => void = null;
   // let item: ICommandItem = null;
