@@ -22,7 +22,7 @@ var app = new phosphide.Application({
 
 
 window.onload = function() {
-  app.run().then(() => {
+  app.run().then(function () {
 
     app.shortcuts.add([
       {
