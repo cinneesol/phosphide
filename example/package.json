@@ -3,23 +3,12 @@
   "name": "phosphide-example",
   "dependencies": {
     "codemirror": "^5.9.0",
-    "phosphide": "file:..",
-    "phosphor-di": "^0.9.0",
-    "phosphor-messaging": "^1.0.6",
-    "phosphor-widget": "^1.0.0-rc.0"
+    "phosphide": "file:.."
   },
   "devDependencies": {
-    "rimraf": "^2.4.4",
-    "steal": "^0.12.7",
-    "typescript": "^1.6.2"
   },
   "scripts": {
-    "build": "tsc --project blue && tsc --project green && tsc --project red && tsc --project yellow && tsc --project editor",
+    "build": "tsc --project blue && tsc --project green && tsc --project red && tsc --project yellow && tsc --project editor && webpack --config webpack.conf.js",
     "postinstall": "npm dedupe"
-  },
-  "system": {
-    "npmIgnore": [
-      "devDependencies"
-    ]
   }
 }

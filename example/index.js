@@ -20,19 +20,22 @@ var app = new phosphide.Application({
   ]
 });
 
-app.run().then(() => {
 
-  app.shortcuts.add([
-    {
-      command: 'command-palette:toggle',
-      sequence: ['Accel Shift P'],
-      selector: '*'
-    },
-    {
-      command: 'command-palette:hide',
-      sequence: ['Escape'],
-      selector: '[data-left-area="command-palette"]'
-    }
-  ]);
+window.onload = function() {
+  app.run().then(() => {
 
-});
+    app.shortcuts.add([
+      {
+        command: 'command-palette:toggle',
+        sequence: ['Accel Shift P'],
+        selector: '*'
+      },
+      {
+        command: 'command-palette:hide',
+        sequence: ['Escape'],
+        selector: '[data-left-area="command-palette"]'
+      }
+    ]);
+
+  });
+}
