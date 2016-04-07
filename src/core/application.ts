@@ -459,7 +459,8 @@ class Application {
    * A subclass may reimplement this method as needed.
    */
   protected addEventsListeners(): void {
-    // Keydown events are captured so that keyboard shortcuts can be
+    // Keydown events are hooked during the capturing phase
+    // (vs the bubbling phase) so that keyboard shortcuts can be
     // invoked prior reaching editable elements.
     document.addEventListener('keydown', this, true);
     window.addEventListener('resize', this);
