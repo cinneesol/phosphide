@@ -37,16 +37,6 @@ function activateEditor(app: Application): Promise<void> {
     let editor = createEditor(i);
     app.shell.addToMainArea(editor);
   }
-  let command = 'editor:tab';
-  app.shortcuts.add([{
-    command,
-    selector: '.editor-CodeMirrorWidget',
-    sequence: ['Tab', 'Tab']
-  }]);
-  app.commands.add([{
-    id: command,
-    handler: () => { console.log('Double Tab key pressed;'); }
-  }]);
   return Promise.resolve<void>();
 }
 
