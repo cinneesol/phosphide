@@ -94,6 +94,7 @@ class ApplicationShell extends Widget {
     this._rightHandler = rightHandler;
 
     // TODO fix these
+    topPanel.id = 'p-top-panel';
     hsplitPanel.id = 'p-main-split-panel';
     leftHandler.sideBar.addClass('p-mod-left');
     rightHandler.sideBar.addClass('p-mod-right');
@@ -141,11 +142,12 @@ class ApplicationShell extends Widget {
    * Add a widget to the top content area.
    */
   addToTopArea(widget: Widget, options: ISideAreaOptions = {}): void {
-    // TODO
     if (!widget.id) {
       console.error('widgets added to app shell must have unique id property');
       return;
     }
+    // Temporary: widgets are added to the panel in order of insertion.
+    this._topPanel.addChild(widget);
   }
 
   /**
