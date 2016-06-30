@@ -78,7 +78,7 @@ class ApplicationShell extends Widget {
     super();
     this.addClass(APPLICATION_SHELL_CLASS);
 
-    let topPanel = new BoxPanel();
+    let topPanel = new Panel();
     let hboxPanel = new BoxPanel();
     let dockPanel = new DockPanel();
     let hsplitPanel = new SplitPanel();
@@ -146,7 +146,7 @@ class ApplicationShell extends Widget {
       console.error('widgets added to app shell must have unique id property');
       return;
     }
-    // Temporary: widgets are added to the box panel in order of insertion.
+    // Temporary: widgets are added to the panel in order of insertion.
     this._topPanel.addChild(widget);
   }
 
