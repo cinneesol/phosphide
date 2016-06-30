@@ -78,7 +78,7 @@ class ApplicationShell extends Widget {
     super();
     this.addClass(APPLICATION_SHELL_CLASS);
 
-    let topPanel = new Panel();
+    let topPanel = new BoxPanel();
     let hboxPanel = new BoxPanel();
     let dockPanel = new DockPanel();
     let hsplitPanel = new SplitPanel();
@@ -94,6 +94,7 @@ class ApplicationShell extends Widget {
     this._rightHandler = rightHandler;
 
     // TODO fix these
+    topPanel.id = 'p-top-panel';
     hsplitPanel.id = 'p-main-split-panel';
     leftHandler.sideBar.addClass('p-mod-left');
     rightHandler.sideBar.addClass('p-mod-right');
@@ -141,11 +142,12 @@ class ApplicationShell extends Widget {
    * Add a widget to the top content area.
    */
   addToTopArea(widget: Widget, options: ISideAreaOptions = {}): void {
-    // TODO
     if (!widget.id) {
       console.error('widgets added to app shell must have unique id property');
       return;
     }
+    // Temporary: widgets are added to the box panel in order of insertion.
+    this._topPanel.addChild(widget);
   }
 
   /**
